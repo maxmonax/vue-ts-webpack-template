@@ -64,11 +64,6 @@ module.exports = {
                 generator: {
                     filename: 'assets/images/[name]-[hash:4][ext]'
                 }
-            },
-            // css files
-            {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
             }
         ]
     },
