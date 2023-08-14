@@ -14,6 +14,10 @@ module.exports = {
         app: path.resolve(__src, 'main.ts')
     },
 
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },
+
     // general plugins
     plugins: [
         new CopyWebpackPlugin({
