@@ -8,11 +8,14 @@
     "build:prod": "webpack --config config/webpack.prod.js --progress"
   },
   "keywords": [],
-  "author": "",
+  "author": "Monax",
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.4.4",
+    "vue": "^3.3.4",
+    "vue-loader": "^17.2.2",
+    "vue-template-compiler": "^2.7.14",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",

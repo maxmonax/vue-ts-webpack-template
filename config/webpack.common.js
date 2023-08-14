@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 // utils
 const __base = path.resolve(__dirname, '..');
@@ -18,18 +19,27 @@ module.exports = {
             title: 'base config',
             // favicon: path.resolve(__src, 'static', 'favicon.ico'),
             template: path.resolve(__src, 'templates', 'index.html'),
-        })
+        }),
+        new VueLoaderPlugin()
     ],
 
     // general rules
     module: {
         rules: [
+            //vue files
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
             // ts files
             {
                 test: /\.ts$/,
                 loader: 'ts-loader',
-                exclude: /node_modules/
-            }
+                exclude: /node_modules/,
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+            },
         ]
     },
 
