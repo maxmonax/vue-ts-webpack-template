@@ -11,22 +11,13 @@ module.exports = merge(common, {
     // dev server
     devServer: {
         port: 8080,
-        static: './dist',
+        static: './build',
         hot: true,
         client: {
             overlay: true
         }
     },
 
-    // dev rules
-    module: {
-        rules: [
-            // css files
-            {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
-            }
-        ]
-    }
+    
     
 });

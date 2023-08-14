@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // utils
 const __base = path.resolve(__dirname, '..');
@@ -15,18 +16,34 @@ module.exports = {
 
     // general plugins
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: '**/*',
+                    context: path.resolve(__base, 'public'),
+                    to: './'
+                }
+            ]
+        }),
         new HtmlWebpackPlugin({
             title: 'base config',
-            // favicon: path.resolve(__src, 'static', 'favicon.ico'),
-            template: path.resolve(__src, 'templates', 'index.html'),
+            template: path.resolve(__src, 'html', 'index.html'),
+            filename: 'index.html',
+            minify: {
+                // collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true
+            }
         }),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        
     ],
 
     // general rules
     module: {
         rules: [
-            //vue files
+            // vue files
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -40,13 +57,23 @@ module.exports = {
                     appendTsSuffixTo: [/\.vue$/]
                 }
             },
+            // images
+            {
+                test: /\.png$/,
+                type: 'asset/resource'
+            },
+            // css files
+            {
+                test: /\.css$/,
+                use: ['vue-style-loader', 'css-loader']
+            }
         ]
     },
 
     // end point
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__base, 'dist'),
+        path: path.resolve(__base, 'build'),
         clean: true
     }
 
