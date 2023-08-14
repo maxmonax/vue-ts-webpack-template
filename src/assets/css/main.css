@@ -1,0 +1,6 @@
+@import './common.css';
+
+@font-face {
+    font-family: Gameria;
+    src: url(../fonts/GAMERIA.ttf);
+}
