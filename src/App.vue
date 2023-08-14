@@ -9,3 +9,12 @@ export default ({
 })
 
 </script>
+
+<style scoped>
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    color: #f2f2f2;
+}
+</style>

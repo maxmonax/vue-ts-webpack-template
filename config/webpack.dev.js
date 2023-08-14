@@ -16,6 +16,17 @@ module.exports = merge(common, {
         client: {
             overlay: true
         }
-    }
+    },
 
+    // dev rules
+    module: {
+        rules: [
+            // css files
+            {
+                test: /\.css$/,
+                use: ['vue-style-loader', 'css-loader']
+            }
+        ]
+    }
+    
 });
