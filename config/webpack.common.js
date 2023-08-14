@@ -75,7 +75,7 @@ module.exports = {
 
     // end point
     output: {
-        filename: '[name].bundle.js',
+        filename: 'app.bundle.js',
         path: path.resolve(__base, 'build'),
         clean: true
     }
