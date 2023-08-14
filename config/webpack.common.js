@@ -21,6 +21,18 @@ module.exports = {
         })
     ],
 
+    // general rules
+    module: {
+        rules: [
+            // ts files
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: /node_modules/
+            }
+        ]
+    },
+
     // end point
     output: {
         filename: '[name].bundle.js',
