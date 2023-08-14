@@ -1,7 +1,7 @@
 {
-  "name": "wp-test",
+  "name": "vue-wp-ts-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "Vue3 Webpack TypeScript Template",
   "scripts": {
     "dev": "webpack serve --config config/webpack.dev.js",
     "dev:open": "webpack serve --config config/webpack.dev.js --open",
@@ -13,6 +13,7 @@
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "ts-loader": "^9.4.4",
     "vue": "^3.3.4",
