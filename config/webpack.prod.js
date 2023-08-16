@@ -15,10 +15,19 @@ module.exports = merge(common, {
     ],
     module: {
         rules: [
-            // css files
+            // css|sass files
             {
-                test: /\.css$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader']
+                test: /\.(css|scss|sass)$/i,
+                use: [
+                    // minificator
+                    MiniCssExtractPlugin.loader,
+                    // Creates `style` nodes from JS strings
+                    // "style-loader",
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ],
             }
         ]
     },

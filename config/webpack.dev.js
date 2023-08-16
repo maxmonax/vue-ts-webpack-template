@@ -21,10 +21,17 @@ module.exports = merge(common, {
     // general rules
     module: {
         rules: [
-            // css files
+            // css|sass files
             {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
+                test: /\.(css|scss|sass)$/i,
+                use: [
+                    // Creates `style` nodes from JS strings
+                    'vue-style-loader',
+                    // Translates CSS into CommonJS
+                    "css-loader",
+                    // Compiles Sass to CSS
+                    "sass-loader",
+                ],
             }
         ]
     },
