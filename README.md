@@ -1,1 +1,1 @@
-# Vue 3 Webpack TypeScript Template
+# Vue 3 + TypeScript + Webpack Template
